@@ -1,0 +1,42 @@
+# Core dependencies
+numpy>=1.24.0
+pandas>=2.0.0
+
+# NLP libraries
+transformers>=4.30.0
+tokenizers>=0.13.0
+sentencepiece>=0.1.99
+
+# Machine Learning
+scikit-learn>=1.3.0
+torch>=2.0.0
+
+# Data processing
+jsonlines>=3.1.0
+pyyaml>=6.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Utilities
+tqdm>=4.65.0
+python-dateutil>=2.8.0
+
+# Development
+pytest>=7.4.0
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.4.0
+
+# Optional: Experiment tracking
+# mlflow>=2.5.0
+
+# Optional: Search backends
+# elasticsearch>=8.8.0
+# opensearch-py>=2.2.0
+
+# Optional: Additional NLP tools
+# spacy>=3.6.0
+# fugashi>=1.2.0  # Japanese tokenizer
+# ipadic>=1.0.0   # Japanese dictionary

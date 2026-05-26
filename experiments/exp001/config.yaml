@@ -1,0 +1,45 @@
+# Experiment Configuration: exp001
+
+experiment:
+  id: exp001
+  name: "Wiktionary-based Normalization Evaluation"
+  description: "Evaluate whether Wiktionary-based normalization improves embedding search quality"
+
+dataset:
+  name: jawiki-20260401
+  source: data/raw/jawiki-20260401.xml.bz2
+  sample_size: 100000
+  preprocessing:
+    - tokenization
+    - normalization
+    - filtering
+
+model:
+  type: embedding
+  architecture: sentence-transformers
+  pretrained: "sonoisa/sentence-bert-base-ja-mean-tokens-v2"
+  
+normalization:
+  enabled: true
+  method: wiktionary
+  dictionary_path: data/external/wiktionary-ja.json
+
+search:
+  index_type: faiss
+  metric: cosine
+  top_k: 10
+
+evaluation:
+  metrics:
+    - MRR
+    - Precision@10
+    - Recall@10
+  test_queries: 1000
+
+output:
+  save_embeddings: true
+  save_index: true
+  save_metrics: true
+  save_figures: true
+
+# Made with Bob
